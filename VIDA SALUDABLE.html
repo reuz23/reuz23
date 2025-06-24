@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><i>Vida Saludable - Tu Bienestar Integral</i></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sitio web interactivo y educativo que promueve estilos de vida saludable. Encuentra recursos de nutrición, ejercicio, bienestar mental y emocional, música relajante, juegos y mucho más.">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Roboto+Slab:ital@1&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', Arial, sans-serif;
+      margin: 0;
+      background: #e6f2ed;
+      color: #24423b;
+      text-align: justify;
+    }
+    header {
+      background: #3eb489;
+      color: #fff;
+      padding: 0;
+      text-align: center;
+      box-shadow: 0 2px 8px #0002;
+      margin-bottom: 25px;
+    }
+    .menu-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 10px 10px 10px;
+    }
+    .menu-logo {
+      width: 75px;
+      height: 75px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #0002;
+      object-fit: cover;
+      background: #fff;
+    }
+    .menu-title {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.3em;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin: 0 0 8px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 22px;
+      background: #2d8562;
+      transition: background 0.2s;
+      font-size: 1.09em;
+    }
+    nav a:hover {
+      background: #295d47;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 18px;
+    }
+    section {
+      margin-bottom: 56px;
+      background: #fff;
+      padding: 32px 22px 28px 22px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px #0001;
+      text-align: justify;
+    }
+    section h2 {
+      color: #2d8562;
+      font-size: 2em;
+      margin-top: 0;
+      margin-bottom: 16px;
+      text-align: center;
+      font-style: italic;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin-top: 24px;
+    }
+    .feature-box {
+      background: #f2fbf7;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0001;
+      padding: 22px 14px 18px 14px;
+      text-align: center;
+      transition: transform 0.1s;
+    }
+    .feature-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px #3eb48933;
+    }
+    .feature-box img {
+      width: 90px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: #e6f2ed;
+      padding: 7px;
+    }
+    .feature-box h3 {
+      margin: 10px 0 8px 0;
+      color: #24423b;
+    }
+    .feature-box p {
+      font-size: 1em;
+    }
+    .music-player {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .music-player audio {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 10px;
+    }
+    .games-draw {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+    .game-card {
+      background: #f2fbf7;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #0001;
+      padding: 20px 14px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.1s;
+    }
+    .game-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px #3eb48933;
+    }
+    .game-card img {
+      width: 85px;
+      margin-bottom: 12px;
+    }
+    .game-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #fff;
+      background: #3eb489;
+      padding: 7px 22px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .game-card a:hover {
+      background: #2d8562;
+    }
+    .about {
+      text-align: justify;
+      margin-top: 12px;
+      font-size: 1.15em;
+      color: #295d47;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .service {
+      background: #e6f2ed;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      padding: 16px 22px;
+      min-width: 210px;
+      text-align: center;
+    }
+    .service img {
+      width: 45px;
+      margin-bottom: 7px;
+    }
+    footer {
+      background: #2d8562;
+      color: #fff;
+      text-align: center;
+      padding: 18px 10px 4px 10px;
+      font-size: 1em;
+      margin-top: 42px;
+      border-radius: 12px 12px 0 0;
+      position: relative;
+    }
+    .footer-social {
+      margin: 10px 0 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+    }
+    .footer-social a {
+      display: inline-block;
+    }
+    .footer-social img {
+      width: 32px;
+      height: 32px;
+      filter: drop-shadow(0 2px 6px #0003);
+      vertical-align: middle;
+      transition: transform 0.15s;
+    }
+    .footer-social img:hover {
+      transform: scale(1.14);
+    }
+    .footer-user {
+      margin-top: 6px;
+      font-size: 1.09em;
+      color: #c8ffeb;
+      font-family: 'Quicksand', Arial, sans-serif;
+    }
+    @media (max-width: 800px) {
+      .features-grid, .services-list {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 14px;
+      }
+      section {
+        padding: 14px 6px;
+      }
+      .container {
+        padding: 12px 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-bar">
+      <img class="menu-logo" src="https://cdn-icons-png.flaticon.com/512/2897/2897149.png" alt="Logo Vida Saludable">
+      <div class="menu-title"><i>Vida Saludable</i></div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nutricion">Nutrición</a>
+        <a href="#ejercicio">Ejercicio</a>
+        <a href="#bienestar">Bienestar Mental</a>
+        <a href="#musica">Música Relajante</a>
+        <a href="#juegos">Juegos y Dibujo</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#acerca">Acerca de</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <!-- Inicio -->
+    <section id="inicio">
+      <h2>Bienvenido a Vida Saludable</h2>
+      <p style="font-size:1.15em;">
+        Este sitio web ha sido diseñado para inspirar, educar y ayudarte a adoptar y mantener estilos de vida saludables.<br>
+        Aquí encontrarás recursos de alta calidad sobre <b>nutrición</b>, <b>ejercicio</b>, <b>bienestar mental y emocional</b>, además de música relajante, juegos interactivos y actividades para dibujar.
+      </p>
+      <div class="features-grid">
+        <div class="feature-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/3211/3211357.png" alt="Nutrición">
+          <h3>Nutrición</h3>
+          <p>Consejos y guías para una alimentación equilibrada, recetas saludables y planes de comidas para todas las edades.</p>
+        </div>
+        <div class="feature-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/2991/2991109.png" alt="Ejercicio">
+          <h3>Ejercicio</h3>
+          <p>Rutinas de actividad física, ejercicios guiados y tips para mantenerte en movimiento cada día.</p>
+        </div>
+        <div class="feature-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/3159/3159066.png" alt="Bienestar mental">
+          <h3>Bienestar Mental</h3>
+          <p>Meditaciones, técnicas de relajación, autocuidado y consejos para fortalecer tu salud emocional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nutrición -->
+    <section id="nutricion">
+      <h2>Nutrición y Alimentación Saludable</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:center;">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/salad-1238246_1280.jpg" alt="Plato saludable" style="width:230px;border-radius:12px;box-shadow:0 2px 18px #3eb48922;">
+        <div style="max-width:600px;">
+          <ul style="font-size:1.06em;line-height:1.6;">
+            <li>Incluye frutas y verduras frescas en cada comida.</li>
+            <li>Prefiere cereales integrales, leguminosas y semillas.</li>
+            <li>Modera el consumo de azúcares, grasas saturadas y sal.</li>
+            <li>Bebe suficiente agua durante el día (mínimo 6-8 vasos).</li>
+            <li>Evita saltarte comidas y mantén horarios regulares.</li>
+            <li>Consulta a un nutriólogo para un plan personalizado.</li>
+          </ul>
+          <p>Recuerda: una buena alimentación es la base para tu bienestar físico y mental.</p>
+        </div>
+      </div>
+      <div style="margin-top:22px;text-align:center;">
+        <a href="https://www.eatright.org/health/wellness/healthy-eating" target="_blank" style="color:#fff;background:#3eb489;padding:7px 22px;border-radius:18px;text-decoration:none;font-weight:bold;">Guía completa de nutrición</a>
+      </div>
+    </section>
+
+    <!-- Ejercicio -->
+    <section id="ejercicio">
+      <h2>Ejercicio y Actividad Física</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:center;">
+        <div style="max-width:600px;">
+          <p>
+            Mantenerte activo es fundamental para tu salud. El ejercicio:
+          </p>
+          <ul style="font-size:1.06em;line-height:1.5;">
+            <li>Mejora tu energía y estado de ánimo.</li>
+            <li>Fortalece músculos y huesos.</li>
+            <li>Reduce el riesgo de enfermedades crónicas.</li>
+            <li>Favorece un sueño reparador.</li>
+            <li>Ayuda a controlar el estrés y la ansiedad.</li>
+          </ul>
+          <p>
+            Haz al menos <b>30 minutos de ejercicio</b> moderado la mayoría de los días. Prueba: caminar, correr, bailar, yoga, ciclismo o natación.
+          </p>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2017/08/07/08/56/yoga-2608588_1280.jpg" alt="Ejercicio saludable" style="width:230px;border-radius:12px;box-shadow:0 2px 18px #3eb48922;">
+      </div>
+      <div style="margin-top:22px;text-align:center;">
+        <a href="https://www.who.int/es/news-room/fact-sheets/detail/physical-activity" target="_blank" style="color:#fff;background:#3eb489;padding:7px 22px;border-radius:18px;text-decoration:none;font-weight:bold;">Beneficios del ejercicio físico</a>
+      </div>
+    </section>
+
+    <!-- Bienestar Mental y Emocional -->
+    <section id="bienestar">
+      <h2>Bienestar Mental y Emocional</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:center;">
+        <img src="https://cdn.pixabay.com/photo/2017/01/30/11/47/meditation-2020253_1280.jpg" alt="Meditación" style="width:220px;border-radius:12px;box-shadow:0 2px 18px #3eb48922;">
+        <div style="max-width:600px;">
+          <ul style="font-size:1.06em;line-height:1.6;">
+            <li>Dedica unos minutos diarios a la meditación o respiración profunda.</li>
+            <li>Habla sobre tus emociones con personas de confianza.</li>
+            <li>Practica la gratitud y el pensamiento positivo.</li>
+            <li>Descansa lo suficiente y cuida tu sueño.</li>
+            <li>Realiza actividades creativas como leer, dibujar o escuchar música.</li>
+          </ul>
+          <p>Recuerda: cuidar tu mente es tan importante como cuidar tu cuerpo.</p>
+        </div>
+      </div>
+      <div style="margin-top:22px;text-align:center;">
+        <a href="https://www.cdc.gov/mentalhealth/es/basics.htm" target="_blank" style="color:#fff;background:#3eb489;padding:7px 22px;border-radius:18px;text-decoration:none;font-weight:bold;">Más sobre bienestar mental</a>
+      </div>
+    </section>
+
+    <!-- Música Relajante -->
+    <section id="musica">
+      <h2>Música para Relajarse</h2>
+      <div class="music-player">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Música relajante" style="width:90px;">
+        <p>Escucha música relajante para meditar, estudiar o descansar:</p>
+        <audio controls loop>
+          <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_12e1c2a9e0.mp3" type="audio/mp3">
+          Tu navegador no soporta audio.
+        </audio>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://www.youtube.com/results?search_query=música+relajante+para+meditar" target="_blank" style="color:#fff;background:#3eb489;padding:6px 18px;border-radius:14px;text-decoration:none;font-weight:bold;">Más música de relajación</a>
+      </div>
+    </section>
+
+    <!-- Juegos y Dibujo -->
+    <section id="juegos">
+      <h2>Juegos y Actividades para Dibujar</h2>
+      <div class="games-draw">
+        <div class="game-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3065/3065336.png" alt="Juego memoria">
+          <h3>Juego de Memoria</h3>
+          <p>Ejercita tu mente con un juego de memoria visual online.</p>
+          <a href="https://www.memozor.com/es/juegos-de-memoria/juego-de-memoria-animales" target="_blank">Jugar ahora</a>
+        </div>
+        <div class="game-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3074/3074889.png" alt="Juego sudoku">
+          <h3>Sudoku Online</h3>
+          <p>Desafía tu lógica y concentración con sudoku para todos los niveles.</p>
+          <a href="https://sudoku.com/es" target="_blank">Jugar ahora</a>
+        </div>
+        <div class="game-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2735/2735259.png" alt="Dibujo online">
+          <h3>Dibuja y Colorea</h3>
+          <p>Deja volar tu creatividad dibujando o coloreando online.</p>
+          <a href="https://www.autodraw.com/" target="_blank">Dibujar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="services-list">
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921823.png" alt="Consejos nutricionales">
+          <div><b>Consejos Nutricionales</b></div>
+          <div>Orientación para mejorar tu dieta y hábitos alimenticios.</div>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Rutinas de ejercicio">
+          <div><b>Rutinas de Ejercicio</b></div>
+          <div>Videos y planes de entrenamiento para cualquier nivel.</div>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/3305/3305803.png" alt="Apoyo psicológico">
+          <div><b>Apoyo Psicológico</b></div>
+          <div>Recursos y contactos para atención emocional.</div>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="Talleres y actividades">
+          <div><b>Talleres y Actividades</b></div>
+          <div>Participa en talleres de relajación, dibujo y cocina saludable.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acerca de -->
+    <section id="acerca">
+      <h2>Acerca de Vida Saludable</h2>
+      <div class="about">
+        <p>
+          <b>Vida Saludable</b> es un proyecto educativo que busca inspirar y guiar a estudiantes, familias y comunidad en general para adoptar estilos de vida saludables.<br>
+          Nuestra misión es ofrecer contenido accesible, interactivo y de alta calidad sobre nutrición, ejercicio, bienestar mental y emocional.<br>
+          Recuerda: ¡Tu bienestar es lo más importante!
+        </p>
+      </div>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 Vida Saludable | Proyecto Integral | Inspirando bienestar físico, mental y emocional
+    <div class="footer-social">
+      <a href="https://facebook.com/" target="_blank" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/" target="_blank" title="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+      </a>
+      <a href="https://instagram.com/" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" alt="Instagram">
+      </a>
+      <a href="https://www.youtube.com/" target="_blank" title="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube">
+      </a>
+      <a href="mailto:tu_correo@email.com" title="Correo electrónico">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo">
+      </a>
+    </div>
+    <div class="footer-user">
+      Sígueme en redes: <b>@tu_usuario</b>
+    </div>
+  </footer>
+</body>
+</html>

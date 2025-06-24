@@ -1,0 +1,182 @@
+<?php
+include("conectar.php");
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualizar Agenda</title>
+<link rel="icon" href="caa.png">
+</head>
+<body>
+<center><img src="enca.jpg" width="1200" height="80"><img src="cecytem.png" width="100"></center><br>
+<center><img src="Gre.png" width="1300" height="30"></center>
+<center>
+<table width="1000">
+<tr>
+  <td>
+    <font color="black" size="3" face="tahoma">
+      <center>COLEGIO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS DEL ESTADO DE MÉXICO.</center>
+    </font>
+  </td>
+</tr>
+<tr>
+  <td>
+    <center>
+      <table width="800">
+        <tr>
+          <td>
+            <font color="black" size="2" face="tahoma">
+              <center>
+                <strong>Elaborado por:</strong> Celia Romero Pichardo.<br>
+                <strong>Grupo:</strong> 40. <strong>Número de lista:</strong><br>
+                <strong>Fecha de Elaboración:</strong> 09 de mayo del 2025. <strong>Hora:</strong> 08:01 a.m.
+              </center>
+            </font>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </td>
+</tr>
+</table>
+</center>
+<br>
+<form action="" method="post">
+<center>
+<table border="1">
+<tr>
+  <td>Matricula:</td>
+  <td>
+    <input type="text" name="ma" required>
+  </td>
+  <td rowspan="9"><center><img src="alumnos.jpeg" width="600"></center></td>
+</tr>
+<tr>
+  <td>Fecha_I:</td>
+  <td><input type="date" name="fe" required></td>
+</tr>
+<tr>
+  <td>Hora:</td>
+  <td>
+    <!-- Combo de horas -->
+    <select name="ho" required>
+      <?php
+      for($h=7; $h<=20; $h++){
+        $hstr = str_pad($h, 2, '0', STR_PAD_LEFT);
+        echo "<option value='$hstr:00'>$hstr:00</option>";
+        echo "<option value='$hstr:30'>$hstr:30</option>";
+      }
+      ?>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>Actividad:</td>
+  <td>
+    <!-- Combo de actividades -->
+    <select name="ac" required>
+      <option value="">Seleccione una actividad</option>
+      <option value="Clase">Clase</option>
+      <option value="Laboratorio">Laboratorio</option>
+      <option value="Taller">Taller</option>
+      <option value="Examen">Examen</option>
+      <option value="Proyecto">Proyecto</option>
+      <option value="Otra">Otra</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>Responsable:</td>
+  <td>
+    <!-- Combo de responsables (ejemplo, puedes consultar desde BD si tienes una tabla de usuarios) -->
+    <select name="re" required>
+      <option value="">Seleccione responsable</option>
+      <option value="Celia Romero Pichardo">Celia Romero Pichardo</option>
+      <option value="Juan Pérez">Juan Pérez</option>
+      <option value="María López">María López</option>
+      <option value="Otro">Otro</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>Materiales:</td>
+  <td>
+    <!-- Combo de materiales -->
+    <select name="mat">
+      <option value="">Seleccione material</option>
+      <option value="Computadora">Computadora</option>
+      <option value="Proyector">Proyector</option>
+      <option value="Libros">Libros</option>
+      <option value="Hojas">Hojas</option>
+      <option value="Ninguno">Ninguno</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>Producto:</td>
+  <td>
+    <!-- Combo de productos -->
+    <select name="pr">
+      <option value="">Seleccione producto</option>
+      <option value="Reporte">Reporte</option>
+      <option value="Presentación">Presentación</option>
+      <option value="Práctica">Práctica</option>
+      <option value="Examen">Examen</option>
+      <option value="Ninguno">Ninguno</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>Evidencias:</td>
+  <td>
+    <!-- Combo de evidencias -->
+    <select name="ev">
+      <option value="">Seleccione evidencia</option>
+      <option value="Fotografía">Fotografía</option>
+      <option value="Video">Video</option>
+      <option value="Documento">Documento</option>
+      <option value="Ninguna">Ninguna</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td colspan="3"><center><input type="submit" value="Actualizar"></center></td>
+</tr>
+</table>
+</center>
+</form>
+<?php
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    // Reemplaza por la conexión real a tu base de datos
+    // $con = mysqli_connect("localhost", "usuario", "contraseña", "basededatos");
+
+    // Requiere que la variable $con esté definida en conectar.php o defínela aquí
+    if(!isset($con)){
+        // Si conectar.php no define $con, descomenta la siguiente línea y configura con tus datos:
+        // $con = mysqli_connect("localhost", "usuario", "contraseña", "basededatos");
+    }
+
+    $a = mysqli_real_escape_string($con, $_POST['ma']);
+    $b = mysqli_real_escape_string($con, $_POST['fe']);
+    $c = mysqli_real_escape_string($con, $_POST['ho']);
+    $d = mysqli_real_escape_string($con, $_POST['ac']);
+    $e = mysqli_real_escape_string($con, $_POST['re']);
+    $f = mysqli_real_escape_string($con, $_POST['mat']);
+    $g = mysqli_real_escape_string($con, $_POST['pr']);
+    $h = mysqli_real_escape_string($con, $_POST['ev']);
+
+    $sql = "UPDATE 3_usuario SET Fecha_I='$b', Hora='$c', Actividad='$d', Responsable='$e', Materiales='$f', Producto='$g', Evidencia='$h' WHERE Matricula='$a'";
+
+    if(mysqli_query($con, $sql)){
+        echo "<script>alert('El producto se actualizó correctamente');</script>";
+    }else{
+        echo "<script>alert('Error: el producto no se actualizó en la base de datos');</script>";
+    }
+}
+?>
+<center><img src="Gre.png" width="1300" height="30"></center>
+<p><center>Algunos derechos reservados 2025. Esta página está diseñada para verse mejor en resolución 1280 X 768 o superior, Firefox & Chrome.</center></p>
+</body>
+</html>

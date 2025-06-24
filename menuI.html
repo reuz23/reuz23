@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vida Saludable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #e9fdf0;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #a8dadc;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      background: white;
+      color: #1d7874;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 2px solid #d0f4de;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #d0f4de;
+      transform: scale(1.05);
+    }
+
+    /* Banner super creativo al inicio */
+    .super-banner {
+      background: linear-gradient(135deg, #a3d8f4 0%, #b0f2c2 50%, #95d5b2 100%);
+      height: 300px;
+      border-radius: 0 0 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #064635;
+      text-shadow: 1px 1px 5px rgba(255,255,255,0.7);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .super-banner h1 {
+      font-size: 3.5em;
+      font-weight: 900;
+      letter-spacing: 3px;
+      animation: textoPulse 3s infinite ease-in-out;
+      margin-bottom: 10px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .super-banner p {
+      font-size: 1.3em;
+      font-weight: 600;
+      max-width: 700px;
+      text-align: center;
+      animation: fadeInUp 2.5s ease forwards;
+      opacity: 0;
+      animation-delay: 1s;
+    }
+
+    /* Animación para texto */
+    @keyframes textoPulse {
+      0%, 100% {
+        text-shadow:
+          0 0 7px #2f9e44,
+          0 0 10px #2f9e44,
+          0 0 21px #55ff7b,
+          0 0 42px #55ff7b,
+          0 0 82px #55ff7b,
+          0 0 92px #55ff7b,
+          0 0 102px #55ff7b,
+          0 0 151px #55ff7b;
+        color: #064635;
+      }
+      50% {
+        text-shadow: none;
+        color: #0c2f1e;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Banner info principal */
+    .banner-wow {
+      background: linear-gradient(120deg, #d0f4de, #bde0fe);
+      padding: 60px 40px;
+      border-radius: 0 0 80px 80px;
+      animation: fondoMovimiento 15s infinite alternate ease-in-out;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 1200px;
+      margin: 30px auto 60px auto;
+    }
+
+    @keyframes fondoMovimiento {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    .banner-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .banner-texto {
+      flex: 1 1 500px;
+      color: #144552;
+      animation: aparecer 1.8s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .banner-texto h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-texto p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .banner-img {
+      flex: 1 1 350px;
+      animation: flotar 3.5s ease-in-out infinite;
+      max-width: 350px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .banner-img img {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+
+    @keyframes flotar {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .cta {
+      display: block;
+      max-width: 250px;
+      background: #ffffff;
+      color: #1d7874;
+      padding: 15px 38px;
+      border-radius: 35px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 3px solid #d0f4de;
+      transition: 0.3s;
+      margin: 0 auto;
+      box-shadow: 0 4px 15px rgba(45, 120, 116, 0.3);
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .cta:hover {
+      background: #caffea;
+      transform: scale(1.12);
+      box-shadow: 0 6px 22px rgba(45, 120, 116, 0.5);
+    }
+
+    .contenido {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      color: #1d7874;
+    }
+
+    .contenido h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .contenido ul {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+
+    .contenido li {
+      margin-bottom: 10px;
+      list-style-type: '✔ ';
+      font-size: 1.05em;
+      color: #3a7d7b;
+    }
+
+    /* Integrantes creativo */
+    .integrantes {
+      max-width: 900px;
+      margin: 50px auto 40px auto;
+      padding: 30px;
+      background: #d0f4de;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(45, 120, 116, 0.3);
+      color: #0b3c3c;
+      text-align: center;
+    }
+
+    .integrantes h3 {
+      font-size: 2.2em;
+      margin-bottom: 25px;
+      font-weight: 800;
+      color: #14532d;
+      text-shadow: 0 0 5px #6fcf97;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .card {
+      background: #ffffffcc;
+      border-radius: 18px;
+      padding: 20px 25px;
+      width: 200px;
+      box-shadow: 0 6px 14px rgba(20, 83, 45, 0.15);
+      font-weight: 700;
+      font-size: 1.05em;
+      color: #14532d;
+      transition: transform 0.3s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "💚";
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.3em;
+      opacity: 0.3;
+      animation: latido 3s infinite ease-in-out;
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(20, 83, 45, 0.3);
+      background: #a9e5a9;
+      color: #083014;
+    }
+
+    footer {
+      background: #caf0f8;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #0077b6;
+      margin-top: 40px;
+      border-top: 3px dashed #a3d9a5;
+    }
+
+    @media (max-width: 900px) {
+      .banner-section {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .banner-texto {
+        text-align: center;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌿 Estilo de Vida Saludable 💧</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">🥗 Nutrición</a>
+      <a href="#">🏋️‍♂️ Ejercicio</a>
+      <a href="#">🧠 Salud Mental</a>
+      <a href="#">💧 Hidratación</a>
+      <a href="#">🥤 Recetas Saludables</a>
+    </nav>
+  </header>
+
+  <!-- Banner super llamativo -->
+  <section class="super-banner">
+    <h1>¡Vive Saludable Hoy!</h1>
+    <p>Transforma tu cuerpo y mente con hábitos simples que generan bienestar duradero. 🌱💧</p>
+  </section>
+
+  <section class="banner-wow">
+    <div class="banner-section">
+      <div class="banner-texto">
+        <h2>🌱 El poder de una alimentación consciente</h2>
+        <p>
+          Comer bien es la base de un estilo de vida saludable. Prioriza alimentos frescos, naturales y balanceados que nutran tu cuerpo y mente, permitiéndote tener energía y claridad todo el día.
+        </p>
+      </div>
+      <div class="banner-img">
+        <!-- Imagen de frutas y verduras frescas -->
+        <img src="https://cdn-icons-png.flaticon.com/512/135/135694.png" alt="Alimentación saludable" />
+      </div>
+    </div>
+
+    <!-- Movimiento para tu bienestar (con pesa de ejercicio) -->
+    <div class="banner-section">
+      <div class="banner-img">
+        <!-- Imagen pesa de ejercicio -->
+        <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Ejercicio físico" />
+      </div>
+      <div class="banner-texto">
+        <h2>🏃‍♀️ Movimiento para tu bienestar</h2>
+        <p>
+          El ejercicio regular no solo mejora tu condición física, sino que también reduce el estrés, mejora tu ánimo y fortalece tu sistema inmunológico. Encuentra una actividad que te guste y disfrútala.
+        </p>
+      </div>
+    </div>
+
+    <div class="banner-section">
+      <div class="banner-texto">
+        <h2>🧘‍♂️ Salud mental y equilibrio emocional</h2>
+        <p>
+          Dedicar tiempo para cuidar tu mente es fundamental. Practicar la meditación, técnicas de respiración y desconectar del estrés cotidiano fomentan una mejor concentración y bienestar emocional.
+        </p>
+      </div>
+      <div class="banner-img">
+        <!-- Imagen persona meditando -->
+        <img src="https://cdn-icons-png.flaticon.com/512/706/706807.png" alt="Salud mental" />
+      </div>
+    </div>
+
+    <!-- Hidratación: clave para tu salud (con vaso de agua) -->
+    <div class="banner-section">
+      <div class="banner-img">
+        <!-- Imagen vaso de agua -->
+        <img src="https://cdn-icons-png.flaticon.com/512/2965/2965562.png" alt="Hidratación" />
+      </div>
+      <div class="banner-texto">
+        <h2>💧 Hidratación: clave para tu salud</h2>
+        <p>
+          Mantener una hidratación adecuada es esencial para el correcto funcionamiento de tu cuerpo. El agua ayuda a eliminar toxinas, regula la temperatura y mejora tu piel y energía diaria.
+        </p>
+      </div>
+    </div>
+
+    <a href="#" class="cta">Comienza tu viaje saludable 🚀</a>
+  </section>
+
+  <div class="contenido">
+    <h2>¡Bienvenido a tu espacio de bienestar!</h2>
+    <p>
+      Este sitio ha sido diseñado para ofrecerte herramientas, consejos y guías que puedes aplicar desde hoy. Nuestro objetivo es motivarte con contenido claro, atractivo y práctico. ¡No necesitas ser experto para vivir bien!
+    </p>
+    <ul>
+      <li>Videos paso a paso con rutinas de movimiento</li>
+      <li>Guías de hidratación por edad y clima</li>
+      <li>Ideas de colaciones saludables para llevar</li>
+      <li>Consejos para dormir mejor y despertar con energía</li>
+    </ul>
+    <p>✨ ¡Hoy es un buen día para empezar tu cambio!</p>
+  </div>
+
+  <section class="integrantes">
+    <h3>Integrantes del Proyecto</h3>
+    <div class="cards">
+      <div class="card">Noé Reyes Remigio</div>
+      <div class="card">Valeria Sánchez Flores</div>
+      <div class="card">Jimena Martínez Medina</div>
+      <div class="card">Mitzy Miñiz Barrios</div>
+      <div class="card">Omar Vargas</div>
+      <div class="card">Jesús Thomas Antonio</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Vida Saludable | Proyecto Escolar | Grupo 404
+  </footer>
+</body>
+</html>
